@@ -1,3 +1,4 @@
+SET SQL_SAFE_UPDATES=0;
 UPDATE (player) SET name = REPLACE(name, '"', '');
 UPDATE (clan) SET name = REPLACE(name, '"', '');
 UPDATE (account) SET name = REPLACE(name, '"', '');
