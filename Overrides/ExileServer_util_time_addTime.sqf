@@ -12,4 +12,4 @@
 private["_time1","_time2"];
 _time1 = _this select 0;
 _time2 = _this select 1;
-(call compile ("extDB3" callExtension format ["9:TIMEDIFF:MINUTES:%1:%2",_time1,_time2])) select 1
+(parseSimpleArray ("extDB3" callExtension format ["9:TIMEDIFF:MINUTES:%1:%2",_time1,_time2])) select 1

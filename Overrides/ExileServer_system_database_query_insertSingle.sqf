@@ -12,5 +12,5 @@
 private["_parameters","_query","_result"];
 _parameters = _this;
 _query = [0, "SQL",_parameters] joinString ":";
-_result = call compile ("extDB3" callExtension _query);
+_result = parseSimpleArray ("extDB3" callExtension _query);
 (_result select 1) select 0

@@ -35,14 +35,9 @@ if !(_pinCode isEqualTo "000000") then
 	_constructionObject setVariable ["ExileAccessCode", _pinCode];
 	_constructionObject setVariable ["ExileIsLocked", (_data select 13), true];
 };
-if (getNumber(configFile >> "CfgVehicles" >> (_data select 1) >> "exileRequiresSimulation") isEqualTo 1) then
+if (typeOf _constructionObject in ["Exile_Construction_ConcreteDoor_Static", "Exile_Construction_ConcreteGate_Static", "Exile_Construction_WoodGate_Static", "Exile_Construction_WoodDoor_Static", "Exile_Construction_ConcreteWindowHatch_Static", "Exile_Construction_WoodGate_Reinforced_Static", "Exile_Construction_WoodDoor_Reinforced_Static", "Exile_Construction_ConcreteFloorHatch_Static"]) then
 {
-	_constructionObject enableSimulationGlobal true;
-	_constructionObject call ExileServer_system_simulationMonitor_addVehicle;
-}
-else 
-{
-	_constructionObject enableSimulationGlobal false;
+	_constructionObject enableDynamicSimulation true;
 };
 _constructionObject setVelocity [0, 0, 0];
 _constructionObject setPosATL _position;

@@ -14,6 +14,6 @@ _flag = _this;
 _currentTimestamp = call ExileServer_util_time_currentTime;
 _flagBuild = _flag getVariable ["ExileTerritoryLastPayed", _currentTimestamp];
 _maintenancePeriod = getNumber(configFile >> "CfgSettings" >> "GarbageCollector" >> "Database" >> "territoryLifeTime");
-_maintenancePeriodDueDate = call compile ("extDB3" callExtension format["9:DATEADD:%1:[%2,0,0,0]",_flagBuild,_maintenancePeriod]);
+_maintenancePeriodDueDate = parseSimpleArray ("extDB3" callExtension format["9:DATEADD:%1:[%2,0,0,0]",_flagBuild,_maintenancePeriod]);
 _flag setVariable ["ExileTerritoryMaintenanceDue", _maintenancePeriodDueDate select 1, true];
 true
