@@ -47,6 +47,7 @@ catch
 	if (!_error_locked) then
 	{
 		"MySQL connection error!" call ExileServer_util_log;
+		"Make sure [Database] in the extdb3-conf.ini is set to [exile] unless you have a different database setup!!!!!" call ExileServer_util_log;
 		"Please have a look at @extDB3/logs/ to find out what went wrong." call ExileServer_util_log;
 		format ["MySQL Error: %1", _exception]  call ExileServer_util_log;
 		"Server will shutdown now :(" call ExileServer_util_log;
