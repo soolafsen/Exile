@@ -55,7 +55,7 @@ correcto = [];
 		};
 	};
 } forEach _aOn;
-ExAd_SB_Timer = ((correcto select 0) - startHour); //SCALAR - Restart time measured in hours.
+ExAd_SB_Timer = 0; //SCALAR - Restart time measured in hours.
 
 ExAd_SB_GUI_POS_Default = 	[safeZoneX, safeZoneY + safeZoneH - 32 * pixelH, safeZoneW, 30 * pixelH]; //ARRAY - Position with this attributes [x,y,w,h];
 ExAd_SB_GUI_TextColor_Default = [1,1,1,1];				//ARRAY - rgba array with values between 0-1, 0 => 0 | 255 => 1
