@@ -7,26 +7,15 @@
 	Displays a statusbar for players. 
 */
 
-_aOn = [0,4,8,12,16,20,24];
+_aOn = [0,3,6,9,12,15,18,21,24]; // Military Time
 startHour = ExileServerStartTime select 3;
 startMinute = ExileServerStartTime select 4;
 startSecond = ExileServerStartTime select 5;
 correcto = [];
 {
-	if(startHour >= _x and startHour != 24) then 
+	if(startHour < _x and startHour != 24) then
 	{
-		//do nothing lol
-	}
-	else
-	{	
-		if(startHour isEqualTo 24) then 
-		{
-			correcto pushBack 0;
-		}
-		else
-		{
-			correcto pushBack _x;
-		};
+		correcto pushBack _x;
 	};
 } forEach _aOn;
 
