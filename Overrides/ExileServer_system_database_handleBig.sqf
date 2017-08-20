@@ -18,4 +18,4 @@ while{true} do
 	if(_pipe isEqualTo "") exitWith {};
 	_result = _result + _pipe;
 };
-call (compile _result)
+(parseSimpleArray _result)
