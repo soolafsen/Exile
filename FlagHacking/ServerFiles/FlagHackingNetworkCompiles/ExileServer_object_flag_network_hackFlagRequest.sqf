@@ -53,14 +53,13 @@ try
 		};
 	}
 	forEach _storedVehicles;
-	
-	_vehicleInfo = format["confirmVehicleOwnership:%1", _storedVehicleRandom select 1] call ExileServer_system_database_query_selectSingle;
-	
 	if (_index isEqualTo -1) then 
 	{
 		throw "Unable to find vehicle in stored vehicles";
-	};
-	
+	};	
+	_vehicleInfo = format["confirmVehicleOwnership:%1", _storedVehicleRandom select 1] call ExileServer_system_database_query_selectSingle;
+
+
 	_storedVehicles deleteAt _index;
 	_object setVariable ["ExileTerritoryStoredVehicles", _storedVehicles, true];
 	format["retrieveVehicle:%1", _vehicleInfo select 0] call ExileServer_system_database_query_fireAndForget;
